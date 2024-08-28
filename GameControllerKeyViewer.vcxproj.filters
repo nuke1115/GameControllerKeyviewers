@@ -70,6 +70,21 @@
     <Text Include="dummy\구상.txt">
       <Filter>리소스 파일</Filter>
     </Text>
+    <Text Include="License\LICENSE.txt">
+      <Filter>License</Filter>
+    </Text>
+    <Text Include="License\Licenses.txt">
+      <Filter>License</Filter>
+    </Text>
+    <Text Include="License\FTL.TXT">
+      <Filter>License</Filter>
+    </Text>
+    <Text Include="License\BSD.txt">
+      <Filter>License</Filter>
+    </Text>
+    <Text Include="License\LGPL.txt">
+      <Filter>License</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Font Include="assets\font\KCC-Hanbit.ttf">

@@ -147,6 +147,11 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="dummy\구상.txt" />
+    <Text Include="License\BSD.txt" />
+    <Text Include="License\FTL.TXT" />
+    <Text Include="License\LGPL.txt" />
+    <Text Include="License\LICENSE.txt" />
+    <Text Include="License\Licenses.txt" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="assets\font\KCC-Hanbit.ttf" />
