@@ -85,6 +85,9 @@
     <Text Include="License\LGPL.txt">
       <Filter>License</Filter>
     </Text>
+    <Text Include="License\zlib_libpng.txt">
+      <Filter>License</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Font Include="assets\font\KCC-Hanbit.ttf">

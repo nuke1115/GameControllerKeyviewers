@@ -152,6 +152,7 @@
     <Text Include="License\LGPL.txt" />
     <Text Include="License\LICENSE.txt" />
     <Text Include="License\Licenses.txt" />
+    <Text Include="License\zlib_libpng.txt" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="assets\font\KCC-Hanbit.ttf" />
