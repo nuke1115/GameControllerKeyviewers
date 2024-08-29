@@ -5,7 +5,11 @@
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Joystick.hpp>
+#include <filesystem>
 #include "..\headers\ErrorCode.hpp"
+
+#include <iostream>
+
 using vector2 = sf::Vector2<int>;
 
 namespace Containers

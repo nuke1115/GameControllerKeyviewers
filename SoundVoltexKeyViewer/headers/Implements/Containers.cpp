@@ -21,12 +21,12 @@ initializing fuction of spritesArray and textsArray
 int Containers::Sprites::DrawableObjects::ContainerInitializer()
 {
 
-    if (!font.loadFromFile("assets\\font\\KCC-Hanbit.ttf"))
+    if (!font.loadFromFile("../SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf"))
     {
         return ERR_IN_LOAD_FILE;
     }
 
-    if (!texture.loadFromFile("assets\\imgs\\Images.png"))
+    if (!texture.loadFromFile("../SoundVoltexKeyViewer/assets/imgs/Images.png"))
     {
         return ERR_IN_LOAD_FILE;
     }
@@ -84,8 +84,8 @@ int Containers::Sprites::DrawableObjects::ContainerInitializer()
 
     spritesArray[6].setPosition(445, 95);
 
-    spritesArray[7].setPosition(180, 120);
-    spritesArray[8].setPosition(730, 120);
+    spritesArray[7].setPosition(180+50, 120);
+    spritesArray[8].setPosition(680+50, 120);
 
     spritesArray[7].setOrigin(50, 50);
     spritesArray[8].setOrigin(50, 50);

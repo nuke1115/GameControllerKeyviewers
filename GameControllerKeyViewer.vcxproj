@@ -107,8 +107,9 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,27 +129,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="headers\Implements\Application.cpp" />
-    <ClCompile Include="headers\Implements\Containers.cpp" />
-    <ClCompile Include="headers\Implements\EventDetector.cpp" />
-    <ClCompile Include="headers\Implements\EventHandler.cpp" />
-    <ClCompile Include="headers\Implements\WindowManager.cpp" />
-    <ClCompile Include="src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="headers\AppEvent.hpp" />
-    <ClInclude Include="headers\Application.hpp" />
-    <ClInclude Include="headers\CalculationUtility.hpp" />
-    <ClInclude Include="headers\Containers.hpp" />
-    <ClInclude Include="headers\DrawableObjectManager.hpp" />
-    <ClInclude Include="headers\ErrorCode.hpp" />
-    <ClInclude Include="headers\EventDetector.hpp" />
-    <ClInclude Include="headers\EventHandler.hpp" />
-    <ClInclude Include="headers\WindowManager.hpp" />
-    <ClInclude Include="includes\inicpp.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="dummy\구상.txt" />
     <Text Include="License\BSD.txt" />
     <Text Include="License\FTL.TXT" />
     <Text Include="License\LGPL.txt" />
@@ -157,13 +137,33 @@
     <Text Include="License\zlib_libpng.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="assets\font\KCC-Hanbit.ttf" />
+    <Image Include="SoundVoltexKeyViewer\assets\imgs\Images.png" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\imgs\Images.png" />
+    <None Include="SoundVoltexKeyViewer\assets\settings\Settings.ini" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\settings\Settings.ini" />
+    <Font Include="SoundVoltexKeyViewer\assets\font\KCC-Hanbit.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Application.cpp" />
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Containers.cpp" />
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\EventDetector.cpp" />
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\EventHandler.cpp" />
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\WindowManager.cpp" />
+    <ClCompile Include="SoundVoltexKeyViewer\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\AppEvent.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\Application.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\CalculationUtility.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\Containers.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\DrawableObjectManager.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\ErrorCode.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\EventDetector.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\EventHandler.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\WindowManager.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\includes\inicpp.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

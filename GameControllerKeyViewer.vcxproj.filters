@@ -1,81 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일\Implements">
-      <UniqueIdentifier>{cdd00931-6171-43c3-bd06-ca05572866bf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="License">
       <UniqueIdentifier>{ed87e803-348e-4010-8acb-6104bbb20e38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SoundVoltexController">
+      <UniqueIdentifier>{f7b968d4-20ca-45ae-909b-873fd671ed0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoundVoltexController\헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="SoundVoltexController\헤더 파일\Implements">
+      <UniqueIdentifier>{cdd00931-6171-43c3-bd06-ca05572866bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoundVoltexController\리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="SoundVoltexController\소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="SoundVoltexController\헤더 파일\Externalncludes">
+      <UniqueIdentifier>{c5b5ddc6-2117-4a92-8f34-7805012e9315}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="headers\Implements\WindowManager.cpp">
-      <Filter>헤더 파일\Implements</Filter>
-    </ClCompile>
-    <ClCompile Include="headers\Implements\Application.cpp">
-      <Filter>헤더 파일\Implements</Filter>
-    </ClCompile>
-    <ClCompile Include="headers\Implements\Containers.cpp">
-      <Filter>헤더 파일\Implements</Filter>
-    </ClCompile>
-    <ClCompile Include="headers\Implements\EventHandler.cpp">
-      <Filter>헤더 파일\Implements</Filter>
-    </ClCompile>
-    <ClCompile Include="headers\Implements\EventDetector.cpp">
-      <Filter>헤더 파일\Implements</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="headers\Application.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\EventDetector.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\AppEvent.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\Containers.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\EventHandler.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\DrawableObjectManager.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\CalculationUtility.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\WindowManager.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\ErrorCode.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="includes\inicpp.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="dummy\구상.txt">
-      <Filter>리소스 파일</Filter>
-    </Text>
     <Text Include="License\LICENSE.txt">
       <Filter>License</Filter>
     </Text>
@@ -96,18 +47,70 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="assets\font\KCC-Hanbit.ttf">
-      <Filter>리소스 파일</Filter>
-    </Font>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="assets\imgs\Images.png">
-      <Filter>리소스 파일</Filter>
+    <Image Include="SoundVoltexKeyViewer\assets\imgs\Images.png">
+      <Filter>SoundVoltexController\리소스 파일</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\settings\Settings.ini">
-      <Filter>리소스 파일</Filter>
+    <None Include="SoundVoltexKeyViewer\assets\settings\Settings.ini">
+      <Filter>SoundVoltexController\리소스 파일</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="SoundVoltexKeyViewer\assets\font\KCC-Hanbit.ttf">
+      <Filter>SoundVoltexController\리소스 파일</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SoundVoltexKeyViewer\src\main.cpp">
+      <Filter>SoundVoltexController\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Application.cpp">
+      <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Containers.cpp">
+      <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\EventDetector.cpp">
+      <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\EventHandler.cpp">
+      <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\WindowManager.cpp">
+      <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SoundVoltexKeyViewer\includes\inicpp.hpp">
+      <Filter>SoundVoltexController\헤더 파일\Externalncludes</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\WindowManager.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\AppEvent.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\Application.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\CalculationUtility.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\Containers.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\DrawableObjectManager.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\ErrorCode.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\EventDetector.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\EventHandler.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
