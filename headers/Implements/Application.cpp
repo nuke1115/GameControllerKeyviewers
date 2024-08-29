@@ -2,9 +2,10 @@
 #define APPLICATION_IMPLEMENT_N
 #include "..\Application.hpp"
 
-Application::Application(int width, int height, std::string WindowName)
+Application::Application(int width, int height)
 {
-    windowManager.CreateWindow(width, height, WindowName,window);
+    inicpp::IniManager _ini("assets\\settings\\Settings.ini");
+    windowManager.CreateWindow(width, height,_ini["WINDOW"].toString("WINDOW_NAME"), window);
 }
 
 sf::Joystick::Axis GetKnobValues(const std::string& key)
