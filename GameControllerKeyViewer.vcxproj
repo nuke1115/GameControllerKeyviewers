@@ -130,19 +130,21 @@
   <ItemGroup>
     <ClCompile Include="headers\Implements\Application.cpp" />
     <ClCompile Include="headers\Implements\Containers.cpp" />
+    <ClCompile Include="headers\Implements\EventDetector.cpp" />
+    <ClCompile Include="headers\Implements\EventHandler.cpp" />
     <ClCompile Include="headers\Implements\WindowManager.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\AppEvent.h" />
-    <ClInclude Include="headers\Application.h" />
-    <ClInclude Include="headers\CalculationUtility.h" />
-    <ClInclude Include="headers\Containers.h" />
-    <ClInclude Include="headers\DrawableObjectManager.h" />
-    <ClInclude Include="headers\ErrorCode.h" />
-    <ClInclude Include="headers\EventDetector.h" />
-    <ClInclude Include="headers\EventHandler.h" />
-    <ClInclude Include="headers\WindowManager.h" />
+    <ClInclude Include="headers\AppEvent.hpp" />
+    <ClInclude Include="headers\Application.hpp" />
+    <ClInclude Include="headers\CalculationUtility.hpp" />
+    <ClInclude Include="headers\Containers.hpp" />
+    <ClInclude Include="headers\DrawableObjectManager.hpp" />
+    <ClInclude Include="headers\ErrorCode.hpp" />
+    <ClInclude Include="headers\EventDetector.hpp" />
+    <ClInclude Include="headers\EventHandler.hpp" />
+    <ClInclude Include="headers\WindowManager.hpp" />
     <ClInclude Include="includes\inicpp.hpp" />
   </ItemGroup>
   <ItemGroup>

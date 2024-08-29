@@ -33,33 +33,39 @@
     <ClCompile Include="headers\Implements\Containers.cpp">
       <Filter>헤더 파일\Implements</Filter>
     </ClCompile>
+    <ClCompile Include="headers\Implements\EventHandler.cpp">
+      <Filter>헤더 파일\Implements</Filter>
+    </ClCompile>
+    <ClCompile Include="headers\Implements\EventDetector.cpp">
+      <Filter>헤더 파일\Implements</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\Application.h">
+    <ClInclude Include="headers\Application.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="headers\EventDetector.h">
+    <ClInclude Include="headers\EventDetector.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="headers\AppEvent.h">
+    <ClInclude Include="headers\AppEvent.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="headers\Containers.h">
+    <ClInclude Include="headers\Containers.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="headers\EventHandler.h">
+    <ClInclude Include="headers\EventHandler.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="headers\DrawableObjectManager.h">
+    <ClInclude Include="headers\DrawableObjectManager.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="headers\CalculationUtility.h">
+    <ClInclude Include="headers\CalculationUtility.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="headers\WindowManager.h">
+    <ClInclude Include="headers\WindowManager.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="headers\ErrorCode.h">
+    <ClInclude Include="headers\ErrorCode.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="includes\inicpp.hpp">

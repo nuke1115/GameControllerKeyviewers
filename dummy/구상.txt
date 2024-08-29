@@ -9,76 +9,20 @@
 
 처음에 ini파일을 불러와서 각 키와 노브의 번호가 몇인지 JoystickCodes에 지정해준다
 
-필요 클레스들:
-Application:
-{
-	초기화 담당.
-	메인 루프 담당.
-}
-
-
-EventDetector://Application에서 사용 //AppEvent구조체 참조로 받아서 사용
-{
-	이벤트/변화 감지 담당
-}
-
-EventHandler://Application에서 사용
-{
-	AppEvent 에 담겨있는 이벤트/변화 처리 담당
-}
-
-DrawableObjectManager: //EventHandler에서 사용 //아마 inline함수가 대부분일듯?
-{
-	이미지/텍스쳐/텍스트 관련 처리(이미지 변경,초기화,텍스쳐 할당) 담당
-}
-
-CalculationUtility: //EventHandler에서 사용 //아마 inline함수가 대부분일듯?
-{
-	클릭 수 계산(버튼당,총합)
-}
-
-
-WindowManager://Application에서 사용
-{
-	화면에 이미지들을 업데이트 하는것을 담당
-}
-
-/////////////////
-
-컨테이너:
-Sprites //struct
-{
-	DrawbleObjects (클레스)
-	{
-		Sprites (스프라이트 배열)
-		Texts (폰트 배열)
-
-	}
-	InterectValues (이미지의 좌표 및 크기들) (구조체)
-	
-}
-
-Joystick
-{
-	Codes
-	{
-		ButtonCodes (struct) //정적멤버변수만 가짐
-		KnobCodes (struct) // 같음
-	}
-	Counting
-	{
-		totalClickCnt
-		bt_a~bt_d,fx_l,fx_r Cnt//배열
-	}
-}
-
-AppEvent //struct
-{
-	bool배열 (버튼들의 수에 맞춰서 동적 할당됨)//기본값x, float배열(노브의 수에 맞춰서 동적 할당됨)//기본값x, bool변수(종료 이벤트가 발생하였는가를 알려주는 변수)//기본값 = 0
-}
-//////////
 
 ini파일에 각 버튼이 몇번 번호에 해당하는지, 노브가 어떤 축에 해당하는지 적어두면, 프로그램이 시작할때 읽어와서 JoystickCodes에 할당해준다
 JoystickCodes에 할당된 값들은 처음 초기화과정 이후에는 값을 읽어오기만 한다(==enum)
 
 AppEvent구조체에 각 값들을 업데이트해준다
+
+
+
+인라인 함수 뜯어고치기
+vs 띄어쓰기, 띄어쓰기같은거 고치기
+vs 탭에서 스페이스4개로 바꾸기
+
+
+
+JoystickIndex static변수를 namespace에만 넣어뒀을때 값 대입이 불가한 문제
+=>Index 구조체에 넣음으로써 해결   
+    
