@@ -9,6 +9,7 @@
 #include "..\headers\WindowManager.hpp"
 #include "..\headers\Containers.hpp"
 #include <iostream>
+#include <string>
 
 class Application
 {
@@ -20,7 +21,7 @@ private:
     EventHandler eventHandler;
     Containers::AppEvent appEvent;
 public:
-    Application(int width, int height, std::string WindowName);
+    Application(int width, int height);
     bool CheckController();
     void Run();
     int Initialize();
