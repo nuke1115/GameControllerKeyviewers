@@ -7,14 +7,15 @@
 
 class WindowManager
 {
-private:
-    const int arrayMaxSize = 9;
 public:
-    WindowManager();
-
-    inline void CreateWindow(int width, int height, std::string WindowName, sf::RenderWindow& window)
+    inline void CreateWindow(int width, int height, sf::RenderWindow& window)
     {
-        window.create(sf::VideoMode(width, height), WindowName);
+        window.create(sf::VideoMode(width, height), "TmpName");
+    }
+
+    inline void SetWindowName(const std::string& name, sf::RenderWindow& window)
+    {
+        window.setTitle(name);
     }
 
     void RenderToWindow(sf::Sprite SpriteArray[], sf::Text TextArray[], sf::RenderWindow& window);

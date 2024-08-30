@@ -4,8 +4,7 @@
 
 Application::Application(int width, int height)
 {
-    inicpp::IniManager _ini("../SoundVoltexKeyviewer/assets/settings/Settings.ini");
-    windowManager.CreateWindow(width, height,_ini["WINDOW"].toString("WINDOW_NAME"), window);
+    windowManager.CreateWindow(width, height, window);
 }
 
 sf::Joystick::Axis GetKnobValues(const std::string& key)
@@ -52,7 +51,9 @@ bool Application::CheckController()
 
 int Application::Initialize()
 {
-    inicpp::IniManager _ini("../SoundVoltexKeyviewer/assets/settings/Settings.ini");
+    inicpp::IniManager _ini("./SoundVoltexKeyviewer/assets/settings/Settings.ini");
+
+    windowManager.SetWindowName(_ini["WINDOW"].toString("WINDOW_NAME"), window);
 
     Containers::Joystick::Codes::Buttons::btA = _ini["BUTTONS"].toInt("BT_A");
     Containers::Joystick::Codes::Buttons::btB = _ini["BUTTONS"].toInt("BT_B");

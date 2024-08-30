@@ -7,9 +7,7 @@
 #include <SFML/Window/Joystick.hpp>
 #include <filesystem>
 #include "..\headers\ErrorCode.hpp"
-
 #include <iostream>
-
 using vector2 = sf::Vector2<int>;
 
 namespace Containers

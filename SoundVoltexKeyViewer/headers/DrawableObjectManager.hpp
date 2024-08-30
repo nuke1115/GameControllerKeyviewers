@@ -40,7 +40,7 @@ public:
         spritesArray[8].setRotation(knobStates[1]);
     }
 
-    inline void ChangeText(sf::Text textsArray[] , unsigned int counts[], unsigned long long totalClickCnt)
+    inline void ChangeText(sf::Text textsArray[] , unsigned int counts[], const unsigned long long& totalClickCnt)
     {
         for (int i = 2; i < 8; i++)
         {

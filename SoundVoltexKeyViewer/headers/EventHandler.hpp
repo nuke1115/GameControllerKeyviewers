@@ -12,7 +12,6 @@ private:
     CalculationUtility calculationUtility;
     Containers::Joystick::Counting counting;
     DrawableObjectManager drawableObjectManager;
-    
 public:
     void HandleEvents(Containers::AppEvent& events, Containers::Sprites::DrawableObjects& drawableObjects, sf::RenderWindow& window);
 };
