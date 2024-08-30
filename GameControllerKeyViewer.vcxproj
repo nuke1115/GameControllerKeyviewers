@@ -107,7 +107,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -126,6 +126,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -146,6 +147,7 @@
     <Font Include="SoundVoltexKeyViewer\assets\font\KCC-Hanbit.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Alert.cpp" />
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Application.cpp" />
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Containers.cpp" />
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\EventDetector.cpp" />
@@ -154,6 +156,7 @@
     <ClCompile Include="SoundVoltexKeyViewer\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\Alert.h" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\AppEvent.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\Application.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\CalculationUtility.hpp" />

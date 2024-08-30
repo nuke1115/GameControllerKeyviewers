@@ -51,7 +51,7 @@ bool Application::CheckController()
 
 int Application::Initialize()
 {
-    inicpp::IniManager _ini("./SoundVoltexKeyviewer/assets/settings/Settings.ini");
+    inicpp::IniManager _ini("../SoundVoltexKeyviewer/assets/settings/Settings.ini");
 
     windowManager.SetWindowName(_ini["WINDOW"].toString("WINDOW_NAME"), window);
 

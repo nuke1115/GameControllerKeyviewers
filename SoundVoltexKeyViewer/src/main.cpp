@@ -1,4 +1,6 @@
 #include "..\headers\Application.hpp"
+#include "..\headers\Alert.h"
+#include "..\headers\ErrorCode.hpp"
 
 int main()
 {
@@ -7,6 +9,13 @@ int main()
     if (!returnCode&&application.CheckController())
     {
         application.Run();
+    }
+    else
+    {
+        Alert alert;
+        alert.ShowAlert(returnCode);
+        returnCode = application.CheckController() == false ? ErrorCode::ERR_IN_CONTROLLER_CONNECTION:6974;
+        alert.ShowAlert(returnCode);
     }
 
     return 0;

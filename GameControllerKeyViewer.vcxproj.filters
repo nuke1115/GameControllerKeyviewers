@@ -80,6 +80,9 @@
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\WindowManager.cpp">
       <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
     </ClCompile>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Alert.cpp">
+      <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SoundVoltexKeyViewer\includes\inicpp.hpp">
@@ -110,6 +113,9 @@
       <Filter>SoundVoltexController\헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="SoundVoltexKeyViewer\headers\EventHandler.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\Alert.h">
       <Filter>SoundVoltexController\헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
