@@ -20,6 +20,10 @@ void Alert::ShowAlert(int code)
     {
         text.setString("ERR IN CONTROLLER CONNECTION");
     }
+    else if (code == ErrorCode::END)
+    {
+        text.setString("END");
+    }
 
     while (window.isOpen())
     {

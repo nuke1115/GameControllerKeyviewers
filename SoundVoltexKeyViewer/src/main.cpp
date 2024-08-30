@@ -14,7 +14,7 @@ int main()
     {
         Alert alert;
         alert.ShowAlert(returnCode);
-        returnCode = application.CheckController() == false ? ErrorCode::ERR_IN_CONTROLLER_CONNECTION:6974;
+        returnCode = application.CheckController() == false ? ErrorCode::ERR_IN_CONTROLLER_CONNECTION:ErrorCode::END;
         alert.ShowAlert(returnCode);
     }
 
