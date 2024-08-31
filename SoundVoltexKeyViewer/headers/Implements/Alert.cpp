@@ -1,43 +1,29 @@
 #ifndef ALERT_IMPLEMENT_N
 #define ALERT_IMPLEMENT_N
 #include "..\Alert.h"
-void Alert::ShowAlert(int code)
+
+
+void Alert::MakeAlertFIle(const std::vector<int>& errorCode)
 {
-    sf::RenderWindow window(sf::VideoMode(500,250),"error");
-    sf::Event event;
+    std::ofstream file("../SoundVoltexKeyViewer/Logs/ERRORS.txt");
 
-    sf::Font font;
-    font.loadFromFile("./SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf");
-    sf::Text text;
-    text.setCharacterSize(20);
-    text.setFont(font);
-    
-    if (code == ErrorCode::ERR_IN_LOAD_FILE)
-    {
-        text.setString("ERR IN LOAD FILE");
-    }
-    else if (code == ErrorCode::ERR_IN_CONTROLLER_CONNECTION)
-    {
-        text.setString("ERR IN CONTROLLER CONNECTION");
-    }
-    else if (code == ErrorCode::END)
-    {
-        text.setString("END");
-    }
+    file << "===============================\n";
 
-    while (window.isOpen())
+    for (auto& i : errorCode)
     {
-        while (window.pollEvent(event))
+
+        if (i == ErrorCode::ERR_IN_LOAD_FILE)
         {
-            if (event.type == sf::Event::Closed)
-            {
-                window.close();
-            }
+            file << "ERROR IN LOAD FILE\n";
         }
-        window.clear();
-        window.draw(text);
-        window.display();
+
+        if (i == ErrorCode::ERR_IN_CONTROLLER_CONNECTION)
+        {
+            file << "ERROR IN CONTROLLER CONNECTION\n";
+        }
+        
     }
+    file.close();
 }
 
 #endif // !ALERT_IMPLEMENT_N

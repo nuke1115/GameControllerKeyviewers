@@ -1,6 +1,7 @@
 #include "..\headers\Application.hpp"
 #include "..\headers\Alert.h"
 #include "..\headers\ErrorCode.hpp"
+#include <vector>
 
 int main()
 {
@@ -13,9 +14,17 @@ int main()
     else
     {
         Alert alert;
-        alert.ShowAlert(returnCode);
-        returnCode = application.CheckController() == false ? ErrorCode::ERR_IN_CONTROLLER_CONNECTION:ErrorCode::END;
-        alert.ShowAlert(returnCode);
+        std::vector<int> errVector;
+        if (returnCode)
+        {
+            errVector.push_back(returnCode);
+        }
+
+        if (application.CheckController() == false)
+        {
+            errVector.push_back(ErrorCode::ERR_IN_CONTROLLER_CONNECTION);
+        }
+        alert.MakeAlertFIle(errVector);
     }
 
     return 0;
