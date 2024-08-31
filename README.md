@@ -24,7 +24,7 @@ GameControllerKeyviewers는 여러 게임들의 컨트롤러의 입력을 캠이
 3.사용법
 --
 
-먼저, 원하시는 키뷰어가 들어있는 EXECUTABLE_APPLICATIONS 폴더로 들어가서, zip파일을 압축해주세요.
+먼저, 원하시는 키뷰어가 들어있는 EXECUTABLE_APPLICATIONS 폴더로 들어가서, zip파일을 압축해제해주세요.
 
 그런 다음, 해당 파일에 있는 README파일을 읽어주세요
 
