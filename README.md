@@ -19,10 +19,15 @@ GameControllerKeyviewers는 여러 게임들의 컨트롤러의 입력을 캠이
 
 2.종류
 --
-종류는 2024/8/29일 기준 아무것도 올라와있지 않습니다
+종류는 2024/8/31일 기준 SoundVoltexControllerKeyViewer만 올라와있습니다
 
 3.사용법
 --
+
+먼저, 원하시는 키뷰어가 들어있는 EXECUTABLE_APPLICATIONS 폴더로 들어가서, zip파일을 압축해주세요.
+
+그런 다음, 해당 파일에 있는 README파일을 읽어주세요
+
 4.연락처
 --
 X(구 Twitter) : @lysrhythmgamer [Link](https://x.com/lysrhythmgamer)

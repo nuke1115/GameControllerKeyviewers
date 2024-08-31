@@ -25,6 +25,9 @@
     <Filter Include="SoundVoltexController\헤더 파일\Externalncludes">
       <UniqueIdentifier>{c5b5ddc6-2117-4a92-8f34-7805012e9315}</UniqueIdentifier>
     </Filter>
+    <Filter Include="README">
+      <UniqueIdentifier>{1e0922af-b5f2-400e-8416-484f2055cf11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="License\LICENSE.txt">
