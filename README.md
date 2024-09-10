@@ -38,4 +38,4 @@ Discord : yellowsticker_ 또는 노란딱지#7701
 5.업데이트 예정중인것
 --
 SoundVoltexControllerKeyViewer:
-  프로그램 내에서 키 설정이 가능하도록 바꾸는 기능
+  프로그램 내에서 키 설정이 가능하도록 하기
