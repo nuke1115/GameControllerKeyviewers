@@ -8,6 +8,8 @@
 #include <filesystem>
 #include "..\headers\ErrorCode.hpp"
 #include <iostream>
+#include <vector>
+
 using vector2 = sf::Vector2<int>;
 
 namespace Containers
@@ -38,8 +40,9 @@ namespace Containers
             sf::Texture texture;
             sf::Font font;
         public:
-            sf::Sprite spritesArray[9]; //0~3 => button 4=> fx_l 5=>fx_r 6 => start 7=> knob_l 8=>knob_r
-            sf::Text textsArray[9];//0~1 => info text 2~8 => count 2~5 => bt 6~7 = fx 8 => total
+            std::vector<sf::Sprite> spritesArray; //0~3 => button 4=> fx_l 5=>fx_r 6 => start 7=> knob_l 8=>knob_r
+            std::vector<sf::Text> textsArray;//0~1 => info text 2~8 => count 2~5 => bt 6~7 = fx 8 => total
+            sf::Text nowSelectedKeyIndicator;
 
             /*
             initializing fuction of spritesArray and textsArray
@@ -50,15 +53,10 @@ namespace Containers
     
     namespace Joystick
     {
-        /*
-        this is readonly struct's namespace
-        once it is initialized,
-        the program will never changes member's value
-        */
         namespace Codes
         {
             
-            struct Buttons//readonly
+            struct Buttons
             {
                 static int  btA,
                             btB,
@@ -69,13 +67,13 @@ namespace Containers
                             start;
             };
 
-            struct Knobs//readonly
+            struct Knobs
             {
                 static sf::Joystick::Axis   knobL,
                                             knobR;
             };
 
-            struct Index//readonly
+            struct Index
             {
                 static unsigned int JoystickIndex;
             };
@@ -84,6 +82,14 @@ namespace Containers
         struct Counting
         {
             unsigned int counts[6] = {0}; // 0~3 => bt 4~5 => fx
+        };
+    }
+
+    namespace System
+    {
+        struct System
+        {
+            static int flickeringSpeed;
         };
     }
 }

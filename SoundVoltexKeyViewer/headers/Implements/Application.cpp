@@ -1,5 +1,3 @@
-#ifndef APPLICATION_IMPLEMENT_N
-#define APPLICATION_IMPLEMENT_N
 #include "..\Application.hpp"
 
 Application::Application(int width, int height)
@@ -7,7 +5,47 @@ Application::Application(int width, int height)
     windowManager.CreateWindow(width, height, window);
 }
 
-sf::Joystick::Axis GetKnobValues(const std::string& key)
+Application::~Application()
+{
+    inicpp::IniManager _ini(iniFilePath);
+    _ini.modify("BUTTONS", "BT_A", Containers::Joystick::Codes::Buttons::btA);
+    _ini.modify("BUTTONS", "BT_B", Containers::Joystick::Codes::Buttons::btB);
+    _ini.modify("BUTTONS", "BT_C", Containers::Joystick::Codes::Buttons::btC);
+    _ini.modify("BUTTONS", "BT_D", Containers::Joystick::Codes::Buttons::btD);
+    _ini.modify("BUTTONS", "FX_L", Containers::Joystick::Codes::Buttons::fxL);
+    _ini.modify("BUTTONS", "FX_R", Containers::Joystick::Codes::Buttons::fxR);
+    _ini.modify("BUTTONS", "START", Containers::Joystick::Codes::Buttons::start);
+    _ini.modify("KNOBS", "KNOB_L", GetKnobStringCodes(Containers::Joystick::Codes::Knobs::knobL));
+    _ini.modify("KNOBS", "KNOB_R", GetKnobStringCodes(Containers::Joystick::Codes::Knobs::knobR));
+}
+
+std::string Application::GetKnobStringCodes(const sf::Joystick::Axis& key)
+{
+    switch (key)
+    {
+    case sf::Joystick::Axis::X:
+        return "X";
+    case sf::Joystick::Axis::Y:
+        return "Y";
+    case sf::Joystick::Axis::Z:
+        return "Z";
+    case sf::Joystick::Axis::R:
+        return "R";
+    case sf::Joystick::Axis::U:
+        return "U";
+    case sf::Joystick::Axis::V:
+        return "V";
+    case sf::Joystick::Axis::PovX:
+        return "PovX";
+    case sf::Joystick::Axis::PovY:
+        return "PovY";
+    default:
+        return "X";
+    }
+
+}
+
+sf::Joystick::Axis Application::GetKnobValues(const std::string& key)
 {
     if (!key.compare("X"))
     {
@@ -51,7 +89,7 @@ bool Application::CheckController()
 
 int Application::Initialize()
 {
-    inicpp::IniManager _ini("../SoundVoltexKeyviewer/assets/settings/Settings.ini");
+    inicpp::IniManager _ini(iniFilePath);
 
     windowManager.SetWindowName(_ini["WINDOW"].toString("WINDOW_NAME"), window);
 
@@ -61,11 +99,15 @@ int Application::Initialize()
     Containers::Joystick::Codes::Buttons::btD = _ini["BUTTONS"].toInt("BT_D");
     Containers::Joystick::Codes::Buttons::fxL = _ini["BUTTONS"].toInt("FX_L");
     Containers::Joystick::Codes::Buttons::fxR = _ini["BUTTONS"].toInt("FX_R");
+    Containers::Joystick::Codes::Buttons::start = _ini["BUTTONS"].toInt("START");
 
     Containers::Joystick::Codes::Knobs::knobL = GetKnobValues(_ini["KNOBS"].toString("KNOB_L"));
     Containers::Joystick::Codes::Knobs::knobR = GetKnobValues(_ini["KNOBS"].toString("KNOB_R"));
 
     Containers::Joystick::Codes::Index::JoystickIndex = _ini["CONTROLLER"].toInt("CONTROLLER_INDEX");
+
+    Containers::System::System::flickeringSpeed = _ini["SYSTEM"].toInt("FLICKERING_SPEED");
+
     return drawableObjects.ContainerInitializer();
 }
 
@@ -75,8 +117,6 @@ void Application::Run()
     {
         eventDetector.DetectEvents(appEvent, window);
         eventHandler.HandleEvents(appEvent, drawableObjects, window);
-        windowManager.RenderToWindow(drawableObjects.spritesArray, drawableObjects.textsArray, window);
+        windowManager.RenderToWindow(drawableObjects.spritesArray, drawableObjects.textsArray,window, drawableObjects.nowSelectedKeyIndicator ,appEvent);
     }
 }
-
-#endif // !APPLICATION_IMPLEMENT_N

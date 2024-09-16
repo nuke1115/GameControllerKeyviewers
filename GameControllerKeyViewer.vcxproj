@@ -42,8 +42,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>.\SoundVoltexKeyViewer\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -107,7 +110,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -130,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="dummy\구상.txt" />
     <Text Include="License\BSD.txt" />
     <Text Include="License\FTL.TXT" />
     <Text Include="License\LGPL.txt" />
@@ -152,6 +156,7 @@
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Containers.cpp" />
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\EventDetector.cpp" />
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\EventHandler.cpp" />
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\KeySettingManager.cpp" />
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\WindowManager.cpp" />
     <ClCompile Include="SoundVoltexKeyViewer\src\main.cpp" />
   </ItemGroup>
@@ -165,6 +170,7 @@
     <ClInclude Include="SoundVoltexKeyViewer\headers\ErrorCode.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\EventDetector.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\EventHandler.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\KeySettingManager.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\WindowManager.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\includes\inicpp.hpp" />
   </ItemGroup>

@@ -20,13 +20,20 @@ initializing fuction of spritesArray and textsArray
 */
 int Containers::Sprites::DrawableObjects::ContainerInitializer()
 {
+    spritesArray.reserve(9);
+    spritesArray.assign(9, sf::Sprite());
 
-    if (!font.loadFromFile("../SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf"))
+    textsArray.reserve(9);
+    textsArray.assign(9, sf::Text());
+    //E:/visualstudio workstation/GameControllerKeyViewer/SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf
+    //../SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf
+    if (!font.loadFromFile("E:/visualstudio workstation/GameControllerKeyViewer/SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf"))
     {
         return ERR_IN_LOAD_FILE;
     }
-
-    if (!texture.loadFromFile("../SoundVoltexKeyViewer/assets/imgs/Images.png"))
+    //E:/visualstudio workstation/GameControllerKeyViewer/SoundVoltexKeyViewer/assets/imgs/Images.png
+    //../SoundVoltexKeyViewer/assets/imgs/Images.png
+    if (!texture.loadFromFile("E:/visualstudio workstation/GameControllerKeyViewer/SoundVoltexKeyViewer/assets/imgs/Images.png"))
     {
         return ERR_IN_LOAD_FILE;
     }
@@ -40,6 +47,8 @@ int Containers::Sprites::DrawableObjects::ContainerInitializer()
     {
         textsArray[i].setFont(font);
     }
+
+    nowSelectedKeyIndicator.setFont(font);
 
 
 #pragma region Text
@@ -58,6 +67,9 @@ int Containers::Sprites::DrawableObjects::ContainerInitializer()
 
     textsArray[0].setPosition(10, 250);
     textsArray[1].setPosition(455, 410);
+
+    nowSelectedKeyIndicator.setPosition(480,50);
+    nowSelectedKeyIndicator.setString("");
 
 #pragma endregion
 
@@ -105,6 +117,8 @@ int Containers::Joystick::Codes::Buttons::btA = 0,
 
 sf::Joystick::Axis  Containers::Joystick::Codes::Knobs::knobL = sf::Joystick::Axis::X,
                     Containers::Joystick::Codes::Knobs::knobR = sf::Joystick::Axis::Y;
+
+int Containers::System::System::flickeringSpeed = 1000;
 
 unsigned int Containers::Joystick::Codes::Index::JoystickIndex = 0;
 #endif // !CONTAINERS_IMPLEMENT_N

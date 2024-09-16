@@ -3,7 +3,9 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <string>
+#include <vector>
 #include "..\headers\Containers.hpp"
+#include "..\headers\AppEvent.hpp"
 
 class WindowManager
 {
@@ -18,6 +20,6 @@ public:
         window.setTitle(name);
     }
 
-    void RenderToWindow(sf::Sprite SpriteArray[], sf::Text TextArray[], sf::RenderWindow& window);
+    void RenderToWindow(std::vector<sf::Sprite>& spriteArray, std::vector<sf::Text>& textArray , sf::RenderWindow& window, sf::Text& indicator, Containers::AppEvent& events);
 };
 #endif // !WINDOW_MANAGER_HEADER_N

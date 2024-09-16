@@ -1,5 +1,3 @@
-#ifndef WINDOW_MANAGER_IMPLEMENT_N
-#define WINDOW_MANAGER_IMPLEMENT_N
 #include "..\WindowManager.hpp"
 
 inline void ClearWindow(sf::RenderWindow& window)
@@ -7,15 +5,28 @@ inline void ClearWindow(sf::RenderWindow& window)
     window.clear();
 }
 
-void WindowManager::RenderToWindow(sf::Sprite SpriteArray[], sf::Text TextArray[], sf::RenderWindow& window)
+void WindowManager::RenderToWindow(std::vector<sf::Sprite>& spriteArray, std::vector<sf::Text>& textArray, sf::RenderWindow& window,sf::Text& indicator ,Containers::AppEvent& events)
 {
     ClearWindow(window);
-    for (int i = 0; i < 9; i++)
+
+    for (auto& i : spriteArray)
     {
-        window.draw(SpriteArray[i]);
-        window.draw(TextArray[i]);
+        window.draw(i);
     }
+
+    if (events.SettingModeOn)
+    {
+        window.draw(indicator);
+    }
+    else
+    {
+        
+
+        for (auto& i : textArray)
+        {
+            window.draw(i);
+        }
+    }
+
     window.display();
 }
-
-#endif // !WINDOW_MANAGER_IMPLEMENT_N

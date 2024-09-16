@@ -4,6 +4,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Font.hpp>
 #include <string>
+#include <vector>
 
 class DrawableObjectManager
 {
@@ -24,7 +25,7 @@ private:
 
                         start[2] = { sf::IntRect(Containers::Sprites::IntrectValues::startOff, Containers::Sprites::IntrectValues::sizeSmallSquare), sf::IntRect(Containers::Sprites::IntrectValues::startOn, Containers::Sprites::IntrectValues::sizeSmallSquare) };
 public:
-    inline void ChangeSpriteTexture(sf::Sprite spritesArray[], bool buttonStates[], float knobStates[])
+    inline void UpdateButtonImage(std::vector<sf::Sprite>& spritesArray, bool buttonStates[], float knobStates[])
     {
         spritesArray[0].setTextureRect(btA[buttonStates[0]]);
         spritesArray[1].setTextureRect(btB[buttonStates[1]]);
@@ -40,13 +41,23 @@ public:
         spritesArray[8].setRotation(knobStates[1]);
     }
 
-    inline void ChangeText(sf::Text textsArray[] , unsigned int counts[], const unsigned long long& totalClickCnt)
+    inline void UpdateCountingText(std::vector<sf::Text>& textsArray, unsigned int counts[], const unsigned long long& totalClickCnt)
     {
         for (int i = 2; i < 8; i++)
         {
             textsArray[i].setString(std::to_string(counts[i - 2]));
         }
         textsArray[8].setString(std::to_string(totalClickCnt));
+    }
+
+    inline void SetNowSelectedKeyIndicatorText(const char text[], sf::Text& indicator)
+    {
+        indicator.setString(text);
+    }
+
+    inline void SetSpriteColor(sf::Sprite& sprite ,const sf::Color& color)
+    {
+        sprite.setColor(color);
     }
 };
 

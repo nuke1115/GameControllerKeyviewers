@@ -48,6 +48,9 @@
     <Text Include="License\zlib_libpng.txt">
       <Filter>License</Filter>
     </Text>
+    <Text Include="dummy\구상.txt">
+      <Filter>README</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SoundVoltexKeyViewer\assets\imgs\Images.png">
@@ -86,6 +89,9 @@
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\Alert.cpp">
       <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
     </ClCompile>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\KeySettingManager.cpp">
+      <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SoundVoltexKeyViewer\includes\inicpp.hpp">
@@ -119,6 +125,9 @@
       <Filter>SoundVoltexController\헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="SoundVoltexKeyViewer\headers\Alert.h">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\KeySettingManager.hpp">
       <Filter>SoundVoltexController\헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

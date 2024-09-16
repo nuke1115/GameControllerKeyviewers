@@ -1,6 +1,8 @@
 #ifndef EVENT_HANDLER_HEADER_N
 #define EVENT_HANDLER_HEADER_N
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <vector>
+#include "..\headers\KeySettingManager.hpp"
 #include "..\headers\Containers.hpp"
 #include "..\headers\AppEvent.hpp"
 #include "..\headers\CalculationUtility.hpp"
@@ -12,6 +14,7 @@ private:
     CalculationUtility calculationUtility;
     Containers::Joystick::Counting counting;
     DrawableObjectManager drawableObjectManager;
+    KeySettingManager keySettingManager;
 public:
     void HandleEvents(Containers::AppEvent& events, Containers::Sprites::DrawableObjects& drawableObjects, sf::RenderWindow& window);
 };
