@@ -6,6 +6,7 @@ GameControllerKeyviewers
 2. 종류
 3. 사용법
 4. 연락처
+5. 업데이트 예정중인것
 
 1.GameControllerKeyviewers란?
 --
@@ -33,3 +34,8 @@ GameControllerKeyviewers는 여러 게임들의 컨트롤러의 입력을 캠이
 X(구 Twitter) : @lysrhythmgamer [Link](https://x.com/lysrhythmgamer)
 
 Discord : yellowsticker_ 또는 노란딱지#7701
+
+5.업데이트 예정중인것
+--
+SoundVoltexControllerKeyViewer:
+  프로그램 내에서 키 설정이 가능하도록 하기
