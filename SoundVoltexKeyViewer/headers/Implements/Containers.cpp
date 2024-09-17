@@ -25,15 +25,13 @@ int Containers::Sprites::DrawableObjects::ContainerInitializer()
 
     textsArray.reserve(9);
     textsArray.assign(9, sf::Text());
-    //E:/visualstudio workstation/GameControllerKeyViewer/SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf
-    //../SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf
-    if (!font.loadFromFile("E:/visualstudio workstation/GameControllerKeyViewer/SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf"))
+
+    if (!font.loadFromFile("../SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf"))
     {
         return ERR_IN_LOAD_FILE;
     }
-    //E:/visualstudio workstation/GameControllerKeyViewer/SoundVoltexKeyViewer/assets/imgs/Images.png
-    //../SoundVoltexKeyViewer/assets/imgs/Images.png
-    if (!texture.loadFromFile("E:/visualstudio workstation/GameControllerKeyViewer/SoundVoltexKeyViewer/assets/imgs/Images.png"))
+
+    if (!texture.loadFromFile("../SoundVoltexKeyViewer/assets/imgs/Images.png"))
     {
         return ERR_IN_LOAD_FILE;
     }
