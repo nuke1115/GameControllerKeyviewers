@@ -1,5 +1,3 @@
-#ifndef CONTAINERS_IMPLEMENT_N
-#define CONTAINERS_IMPLEMENT_N
 #include "..\Containers.hpp"
 
 const vector2   Containers::Sprites::IntrectValues::btOn            ={ 0  , 0 },
@@ -14,39 +12,40 @@ const vector2   Containers::Sprites::IntrectValues::btOn            ={ 0  , 0 },
                 Containers::Sprites::IntrectValues::sizeSmallSquare ={ 75 , 75 },
                 Containers::Sprites::IntrectValues::sizeRectangle   ={ 100, 50 };
 
+const char Containers::Sprites::TextStrings::indicatorTextsArray[10][10] = { "btA","btB","btC","btD","fxL","fxR","start","knobL","knobR","" };
+
+const sf::Color Containers::Sprites::Colors::flickingColors[2] = { sf::Color::Color(255,255,255,0),sf::Color::Color(255,255,255,255) };
 
 /*
 initializing fuction of spritesArray and textsArray
 */
 int Containers::Sprites::DrawableObjects::ContainerInitializer()
 {
-    spritesArray.reserve(9);
-    spritesArray.assign(9, sf::Sprite());
 
-    textsArray.reserve(9);
-    textsArray.assign(9, sf::Text());
-
-    if (!font.loadFromFile("../SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf"))
+    if (!_font.loadFromFile("../SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf"))
     {
         return ERR_IN_LOAD_FILE;
     }
 
-    if (!texture.loadFromFile("../SoundVoltexKeyViewer/assets/imgs/Images.png"))
+    if (!_texture.loadFromFile("../SoundVoltexKeyViewer/assets/imgs/Images.png"))
     {
         return ERR_IN_LOAD_FILE;
     }
 
     for (int i = 0; i < 9; i++)
     {
-        spritesArray[i].setTexture(texture);
+        spritesArray[i].setTexture(_texture);
     }
 
     for (int i = 0; i < 9; i++)
     {
-        textsArray[i].setFont(font);
+        textsArray[i].setFont(_font);
     }
 
-    nowSelectedKeyIndicator.setFont(font);
+    nowSelectedKeyIndicator.setFont(_font);
+
+    
+
 
 
 #pragma region Text
@@ -101,8 +100,12 @@ int Containers::Sprites::DrawableObjects::ContainerInitializer()
     spritesArray[8].setOrigin(50, 50);
 
 #pragma endregion
+
+
+
     return 0;
 }
+
 
 //initial value
 int Containers::Joystick::Codes::Buttons::btA = 0,
@@ -119,4 +122,3 @@ sf::Joystick::Axis  Containers::Joystick::Codes::Knobs::knobL = sf::Joystick::Ax
 int Containers::System::System::flickeringSpeed = 1000;
 
 unsigned int Containers::Joystick::Codes::Index::JoystickIndex = 0;
-#endif // !CONTAINERS_IMPLEMENT_N

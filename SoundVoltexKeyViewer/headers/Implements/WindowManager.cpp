@@ -1,17 +1,12 @@
 #include "..\WindowManager.hpp"
 
-inline void ClearWindow(sf::RenderWindow& window)
-{
-    window.clear();
-}
-
-void WindowManager::RenderToWindow(std::vector<sf::Sprite>& spriteArray, std::vector<sf::Text>& textArray, sf::RenderWindow& window,sf::Text& indicator ,Containers::AppEvent& events)
+void WindowManager::RenderToWindow(sf::Sprite spritesArray[], sf::Text textsArray[], sf::RenderWindow& window, sf::Text& indicator, Containers::AppEvent& events)
 {
     ClearWindow(window);
 
-    for (auto& i : spriteArray)
+    for (int i = 0; i < 9; i++)
     {
-        window.draw(i);
+        window.draw(spritesArray[i]);
     }
 
     if (events.SettingModeOn)
@@ -20,11 +15,9 @@ void WindowManager::RenderToWindow(std::vector<sf::Sprite>& spriteArray, std::ve
     }
     else
     {
-        
-
-        for (auto& i : textArray)
+        for (int i = 0; i < 9; i++)
         {
-            window.draw(i);
+            window.draw(textsArray[i]);
         }
     }
 

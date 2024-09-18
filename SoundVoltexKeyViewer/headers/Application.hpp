@@ -1,6 +1,7 @@
 #ifndef APPLICATION_HEADER_N
 #define APPLICATION_HEADER_N
-#define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING
+#include <iostream>
+#include <string>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Joystick.hpp>
 #include "..\includes\inicpp.hpp"
@@ -9,19 +10,18 @@
 #include "..\headers\AppEvent.hpp"
 #include "..\headers\WindowManager.hpp"
 #include "..\headers\Containers.hpp"
-#include <iostream>
-#include <string>
+
 
 class Application
 {
 private:
-    sf::RenderWindow window;
-    WindowManager windowManager;
-    Containers::Sprites::DrawableObjects drawableObjects;
-    EventDetector eventDetector;
-    EventHandler eventHandler;
-    Containers::AppEvent appEvent;
-    std::string iniFilePath = "../SoundVoltexKeyviewer/assets/settings/Settings.ini";
+    sf::RenderWindow _window;
+    WindowManager _windowManager;
+    Containers::Sprites::DrawableObjects _drawableObjects;
+    EventDetector _eventDetector;
+    EventHandler _eventHandler;
+    Containers::AppEvent _appEvent;
+    std::string _iniFilePath = "../SoundVoltexKeyviewer/assets/settings/Settings.ini";
     sf::Joystick::Axis GetKnobValues(const std::string& key);
     std::string GetKnobStringCodes(const sf::Joystick::Axis& key);
 public:

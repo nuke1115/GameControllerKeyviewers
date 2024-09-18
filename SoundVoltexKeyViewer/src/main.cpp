@@ -1,7 +1,8 @@
+//disabled _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING
+#include <vector>
 #include "..\headers\Application.hpp"
 #include "..\headers\Alert.h"
 #include "..\headers\ErrorCode.hpp"
-#include <vector>
 
 int main()
 {

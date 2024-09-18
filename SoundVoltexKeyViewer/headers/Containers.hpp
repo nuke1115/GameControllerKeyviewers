@@ -5,10 +5,8 @@
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Joystick.hpp>
-#include <filesystem>
-#include "..\headers\ErrorCode.hpp"
 #include <iostream>
-#include <vector>
+#include "..\headers\ErrorCode.hpp"
 
 using vector2 = sf::Vector2<int>;
 
@@ -37,18 +35,31 @@ namespace Containers
         class DrawableObjects
         {
         private:
-            sf::Texture texture;
-            sf::Font font;
+            sf::Texture _texture;
+            sf::Font _font;
         public:
-            std::vector<sf::Sprite> spritesArray; //0~3 => button 4=> fx_l 5=>fx_r 6 => start 7=> knob_l 8=>knob_r
-            std::vector<sf::Text> textsArray;//0~1 => info text 2~8 => count 2~5 => bt 6~7 = fx 8 => total
+            
+            sf::Sprite spritesArray[9];//0~3 => button 4=> fx_l 5=>fx_r 6 => start 7=> knob_l 8=>knob_r
+            sf::Text textsArray[9];//0~1 => info text 2~8 => count 2~5 => bt 6~7 = fx 8 => total
             sf::Text nowSelectedKeyIndicator;
+            
 
             /*
             initializing fuction of spritesArray and textsArray
             */
             int ContainerInitializer();
         };
+
+        struct TextStrings
+        {
+            const static char indicatorTextsArray[10][10];
+        };
+
+        struct Colors
+        {
+            const static sf::Color flickingColors[2];
+        };
+
     }
     
     namespace Joystick

@@ -1,10 +1,9 @@
 #ifndef DRAWABLE_OBJECT_MANAGER_HEADER_N
 #define DRAWABLE_OBJECT_MANAGER_HEADER_N
-#include "..\headers\Containers.hpp"
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Font.hpp>
 #include <string>
-#include <vector>
+#include "..\headers\Containers.hpp"
 
 class DrawableObjectManager
 {
@@ -25,7 +24,7 @@ private:
 
                         start[2] = { sf::IntRect(Containers::Sprites::IntrectValues::startOff, Containers::Sprites::IntrectValues::sizeSmallSquare), sf::IntRect(Containers::Sprites::IntrectValues::startOn, Containers::Sprites::IntrectValues::sizeSmallSquare) };
 public:
-    inline void UpdateButtonImage(std::vector<sf::Sprite>& spritesArray, bool buttonStates[], float knobStates[])
+    inline void UpdateButtonImage(sf::Sprite spritesArray[], bool buttonStates[], float knobStates[])
     {
         spritesArray[0].setTextureRect(btA[buttonStates[0]]);
         spritesArray[1].setTextureRect(btB[buttonStates[1]]);
@@ -41,7 +40,7 @@ public:
         spritesArray[8].setRotation(knobStates[1]);
     }
 
-    inline void UpdateCountingText(std::vector<sf::Text>& textsArray, unsigned int counts[], const unsigned long long& totalClickCnt)
+    inline void UpdateCountingText(sf::Text textsArray[], unsigned int counts[], const unsigned long long& totalClickCnt)
     {
         for (int i = 2; i < 8; i++)
         {
@@ -59,6 +58,7 @@ public:
     {
         sprite.setColor(color);
     }
+    
 };
 
 #endif // !DRAWABLE_OBJECT_MANAGER_HEADER_N

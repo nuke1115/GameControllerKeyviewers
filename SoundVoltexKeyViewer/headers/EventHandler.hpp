@@ -1,7 +1,6 @@
 #ifndef EVENT_HANDLER_HEADER_N
 #define EVENT_HANDLER_HEADER_N
 #include <SFML/Graphics/RenderWindow.hpp>
-#include <vector>
 #include "..\headers\KeySettingManager.hpp"
 #include "..\headers\Containers.hpp"
 #include "..\headers\AppEvent.hpp"
@@ -11,10 +10,10 @@
 class EventHandler
 {
 private:
-    CalculationUtility calculationUtility;
-    Containers::Joystick::Counting counting;
-    DrawableObjectManager drawableObjectManager;
-    KeySettingManager keySettingManager;
+    CalculationUtility _calculationUtility;
+    Containers::Joystick::Counting _counting;
+    DrawableObjectManager _drawableObjectManager;
+    KeySettingManager _keySettingManager;
 public:
     void HandleEvents(Containers::AppEvent& events, Containers::Sprites::DrawableObjects& drawableObjects, sf::RenderWindow& window);
 };

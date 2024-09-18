@@ -1,5 +1,3 @@
-#ifndef ALERT_IMPLEMENT_N
-#define ALERT_IMPLEMENT_N
 #include "..\Alert.h"
 
 
@@ -25,5 +23,3 @@ void Alert::MakeAlertFIle(const std::vector<int>& errorCode)
     }
     file.close();
 }
-
-#endif // !ALERT_IMPLEMENT_N

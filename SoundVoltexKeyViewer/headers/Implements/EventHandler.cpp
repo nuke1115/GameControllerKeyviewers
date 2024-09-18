@@ -1,4 +1,3 @@
-
 #include "..\EventHandler.hpp"
 
 void EventHandler::HandleEvents(Containers::AppEvent& events, Containers::Sprites::DrawableObjects& drawableObjects, sf::RenderWindow& window)
@@ -12,18 +11,18 @@ void EventHandler::HandleEvents(Containers::AppEvent& events, Containers::Sprite
     if (events.SettingModeEntryEvent || events.SettingModeOn)
     {
         
-        keySettingManager.SetKeyConfig(events,drawableObjectManager, drawableObjects);
+        _keySettingManager.SetKeyConfig(events,drawableObjects);
     }
     else
     {
         
         for (int i = 0; i < 6; i++)
         {
-            counting.counts[i] += events.ButtonCountValues[i];
+            _counting.counts[i] += events.ButtonCountValues[i];
             events.ButtonCountValues[i] = 0;
         }
 
-        drawableObjectManager.UpdateButtonImage(drawableObjects.spritesArray, events.ButtonStates, events.KnobStates);
-        drawableObjectManager.UpdateCountingText(drawableObjects.textsArray, counting.counts, calculationUtility.GetSum(counting.counts));
+        _drawableObjectManager.UpdateButtonImage(drawableObjects.spritesArray, events.ButtonStates, events.KnobStates);
+        _drawableObjectManager.UpdateCountingText(drawableObjects.textsArray, _counting.counts, _calculationUtility.GetSum(_counting.counts));
     }
 }

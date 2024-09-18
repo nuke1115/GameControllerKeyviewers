@@ -4,9 +4,9 @@ void EventDetector::DetectEvents(Containers::AppEvent& eventContainer, sf::Rende
 {
     
     eventContainer.SettingModeGoNextEvent = false;
-    while (window.pollEvent(event))
+    while (window.pollEvent(_event))
     {
-        if (event.type == sf::Event::Closed)
+        if (_event.type == sf::Event::Closed)
         {
             eventContainer.TerminateEvent = true;
             break;
@@ -14,20 +14,20 @@ void EventDetector::DetectEvents(Containers::AppEvent& eventContainer, sf::Rende
 
         if (eventContainer.SettingModeOn)
         {
-            if (event.type == sf::Event::JoystickButtonPressed)
+            if (_event.type == sf::Event::JoystickButtonPressed)
             {
-                eventContainer.SettingModeButtonIndex = event.joystickButton.button;
+                eventContainer.SettingModeButtonIndex = _event.joystickButton.button;
                 
             }
 
-            if (event.type == sf::Event::JoystickMoved)
+            if (_event.type == sf::Event::JoystickMoved)
             {
-                eventContainer.SettingModeKnobIndex = event.joystickMove.axis;
+                eventContainer.SettingModeKnobIndex = _event.joystickMove.axis;
             }
 
-            if (event.type == sf::Event::KeyPressed)
+            if (_event.type == sf::Event::KeyPressed)
             {
-                if (event.key.code == sf::Keyboard::Enter)
+                if (_event.key.code == sf::Keyboard::Enter)
                 {
                     eventContainer.SettingModeGoNextEvent = true;
                 }
@@ -38,84 +38,80 @@ void EventDetector::DetectEvents(Containers::AppEvent& eventContainer, sf::Rende
         else
         {
             eventContainer.SettingModeEntryEvent = sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) && sf::Keyboard::isKeyPressed(sf::Keyboard::S);
-            if (event.type == sf::Event::JoystickButtonPressed)
+            if (_event.type == sf::Event::JoystickButtonPressed)
             {
 
-                if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::btA)
+                if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::btA)
                 {
                     eventContainer.ButtonStates[0] = true;
                     eventContainer.ButtonCountValues[0] = 1;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::btB)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::btB)
                 {
                     eventContainer.ButtonStates[1] = true;
                     eventContainer.ButtonCountValues[1] = 1;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::btC)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::btC)
                 {
                     eventContainer.ButtonStates[2] = true;
                     eventContainer.ButtonCountValues[2] = 1;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::btD)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::btD)
                 {
                     eventContainer.ButtonStates[3] = true;
                     eventContainer.ButtonCountValues[3] = 1;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::fxL)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::fxL)
                 {
                     eventContainer.ButtonStates[4] = true;
                     eventContainer.ButtonCountValues[4] = 1;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::fxR)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::fxR)
                 {
                     eventContainer.ButtonStates[5] = true;
                     eventContainer.ButtonCountValues[5] = 1;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::start)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::start)
                 {
                     eventContainer.ButtonStates[6] = true;
                 }
                 continue;
             }
 
-            if (event.type == sf::Event::JoystickButtonReleased)
+            if (_event.type == sf::Event::JoystickButtonReleased)
             {
-                if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::btA)
+                if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::btA)
                 {
                     eventContainer.ButtonStates[0] = false;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::btB)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::btB)
                 {
                     eventContainer.ButtonStates[1] = false;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::btC)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::btC)
                 {
                     eventContainer.ButtonStates[2] = false;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::btD)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::btD)
                 {
                     eventContainer.ButtonStates[3] = false;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::fxL)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::fxL)
                 {
                     eventContainer.ButtonStates[4] = false;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::fxR)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::fxR)
                 {
                     eventContainer.ButtonStates[5] = false;
                 }
-                else if (event.joystickButton.button == Containers::Joystick::Codes::Buttons::start)
+                else if (_event.joystickButton.button == Containers::Joystick::Codes::Buttons::start)
                 {
                     eventContainer.ButtonStates[6] = false;
                 }
                 continue;
             }
         }
-
     }
-    eventContainer.KnobStates[0] = sf::Joystick::getAxisPosition(Containers::Joystick::Codes::Index::JoystickIndex, Containers::Joystick::Codes::Knobs::knobL) * knobAngleCalibrationNum;
-    eventContainer.KnobStates[1] = sf::Joystick::getAxisPosition(Containers::Joystick::Codes::Index::JoystickIndex, Containers::Joystick::Codes::Knobs::knobR) * knobAngleCalibrationNum;
-    
-
-    
+    eventContainer.KnobStates[0] = sf::Joystick::getAxisPosition(Containers::Joystick::Codes::Index::JoystickIndex, Containers::Joystick::Codes::Knobs::knobL) * _knobAngleCalibrationNum;
+    eventContainer.KnobStates[1] = sf::Joystick::getAxisPosition(Containers::Joystick::Codes::Index::JoystickIndex, Containers::Joystick::Codes::Knobs::knobR) * _knobAngleCalibrationNum;
 }

@@ -2,12 +2,12 @@
 
 Application::Application(int width, int height)
 {
-    windowManager.CreateWindow(width, height, window);
+    _windowManager.CreateWindow(width, height, _window);
 }
 
 Application::~Application()
 {
-    inicpp::IniManager _ini(iniFilePath);
+    inicpp::IniManager _ini(_iniFilePath);
     _ini.modify("BUTTONS", "BT_A", Containers::Joystick::Codes::Buttons::btA);
     _ini.modify("BUTTONS", "BT_B", Containers::Joystick::Codes::Buttons::btB);
     _ini.modify("BUTTONS", "BT_C", Containers::Joystick::Codes::Buttons::btC);
@@ -80,6 +80,7 @@ sf::Joystick::Axis Application::GetKnobValues(const std::string& key)
         return sf::Joystick::Axis::PovY;
     }
 
+    return sf::Joystick::Axis::X;//default
 }
 
 bool Application::CheckController()
@@ -89,9 +90,9 @@ bool Application::CheckController()
 
 int Application::Initialize()
 {
-    inicpp::IniManager _ini(iniFilePath);
+    inicpp::IniManager _ini(_iniFilePath);
 
-    windowManager.SetWindowName(_ini["WINDOW"].toString("WINDOW_NAME"), window);
+    _windowManager.SetWindowName(_ini["WINDOW"].toString("WINDOW_NAME"), _window);
 
     Containers::Joystick::Codes::Buttons::btA = _ini["BUTTONS"].toInt("BT_A");
     Containers::Joystick::Codes::Buttons::btB = _ini["BUTTONS"].toInt("BT_B");
@@ -108,15 +109,15 @@ int Application::Initialize()
 
     Containers::System::System::flickeringSpeed = _ini["SYSTEM"].toInt("FLICKERING_SPEED");
 
-    return drawableObjects.ContainerInitializer();
+    return _drawableObjects.ContainerInitializer();
 }
 
 void Application::Run()
 {
-    while (window.isOpen())
+    while (_window.isOpen())
     {
-        eventDetector.DetectEvents(appEvent, window);
-        eventHandler.HandleEvents(appEvent, drawableObjects, window);
-        windowManager.RenderToWindow(drawableObjects.spritesArray, drawableObjects.textsArray,window, drawableObjects.nowSelectedKeyIndicator ,appEvent);
+        _eventDetector.DetectEvents(_appEvent, _window);
+        _eventHandler.HandleEvents(_appEvent, _drawableObjects, _window);
+        _windowManager.RenderToWindow(_drawableObjects.spritesArray, _drawableObjects.textsArray, _window, _drawableObjects.nowSelectedKeyIndicator, _appEvent);
     }
 }

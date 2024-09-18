@@ -9,8 +9,8 @@
 class EventDetector
 {
 private:
-    const float knobAngleCalibrationNum = 3.6f;
-    sf::Event event;
+    const float _knobAngleCalibrationNum = 3.6f;
+    sf::Event _event;
 public:
     void DetectEvents(Containers::AppEvent& eventContainer, sf::RenderWindow& window);
 };

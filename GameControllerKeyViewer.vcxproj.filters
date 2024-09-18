@@ -92,11 +92,11 @@
     <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\KeySettingManager.cpp">
       <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
     </ClCompile>
+    <ClCompile Include="SoundVoltexKeyViewer\headers\Implements\ImageFlickManager.cpp">
+      <Filter>SoundVoltexController\헤더 파일\Implements</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SoundVoltexKeyViewer\includes\inicpp.hpp">
-      <Filter>SoundVoltexController\헤더 파일\Externalncludes</Filter>
-    </ClInclude>
     <ClInclude Include="SoundVoltexKeyViewer\headers\WindowManager.hpp">
       <Filter>SoundVoltexController\헤더 파일</Filter>
     </ClInclude>
@@ -129,6 +129,12 @@
     </ClInclude>
     <ClInclude Include="SoundVoltexKeyViewer\headers\KeySettingManager.hpp">
       <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\ImageFlickManager.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\includes\inicpp.hpp">
+      <Filter>SoundVoltexController\헤더 파일\Externalncludes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

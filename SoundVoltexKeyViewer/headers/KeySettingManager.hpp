@@ -3,23 +3,34 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Joystick.hpp>
+#include <string>
 #include "..\headers\AppEvent.hpp"
 #include "..\headers\DrawableObjectManager.hpp"
+#include "..\headers\ImageFlickManager.hpp"
 #include "..\headers\Containers.hpp"
-#include <string>
-
 
 class KeySettingManager
 {
 private:
+    DrawableObjectManager _drawableObjectManager;
+    ImageFlickManager _imageFlickManager;
     int _index = 1;
-    int _counter = 0;
-    bool _isColorChanged = false;
     sf::Joystick::Axis getAxisCode(unsigned int key);
-    sf::Color _spriteColor;
-    void FlickImage(Containers::Sprites::DrawableObjects& drawableObjects, DrawableObjectManager& drawableObjectManager); //index가 범위 안에 있는동안 반복하고, 범위를 벗어나면, 다시 모든 이미지를 원래대로 돌리고, 종료
+
+    inline void FlickImage(sf::Sprite spritesArray[], const bool& resetEvent)
+    {
+        if (resetEvent)
+        {
+            _imageFlickManager.ResetImages(spritesArray, 9);
+        }
+        
+        _imageFlickManager.FlickImage(spritesArray, _index-1);
+    }
+    
 public:
-    void SetKeyConfig(Containers::AppEvent& appEvent, DrawableObjectManager& drawableObjectManager, Containers::Sprites::DrawableObjects& drawableObjects);
+
+
+    void SetKeyConfig(Containers::AppEvent& appEvent, Containers::Sprites::DrawableObjects& drawableObjects);
 };
 
 
