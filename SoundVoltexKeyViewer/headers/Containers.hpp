@@ -19,17 +19,22 @@ namespace Containers
     {
         struct IntrectValues
         {
-             static const vector2   btOn            ,
-                                    btOff           ,
-                                    fxOn            ,
-                                    fxOff           ,
-                                    startOn         ,
-                                    startOff        ,
-                                    knobL           ,
-                                    knobR           ,
-                                    sizeBigSquare   ,//size section
-                                    sizeRectangle   ,
-                                    sizeSmallSquare ;
+             static const vector2   
+#pragma region SpriteCoordinateSection
+                                    btOn,
+                                    btOff,
+                                    fxOn,
+                                    fxOff,
+                                    startOn,
+                                    startOff,
+                                    knobL,
+                                    knobR,
+#pragma endregion
+#pragma region SpriteSizeSection
+                                    sizeBigSquare,
+                                    sizeRectangle,
+                                    sizeSmallSquare;
+#pragma endregion
         };
 
         class DrawableObjects
@@ -39,9 +44,8 @@ namespace Containers
             sf::Font _font;
         public:
             
-            sf::Sprite spritesArray[9];//0~3 => button 4=> fx_l 5=>fx_r 6 => start 7=> knob_l 8=>knob_r
-            sf::Text textsArray[9];//0~1 => info text 2~8 => count 2~5 => bt 6~7 = fx 8 => total
-            sf::Text nowSelectedKeyIndicator;
+            sf::Sprite spritesArray[9];//0 => btA , 1 => btB , 2 => btC , 3 => btD ,  4=> fx_l ,5=>fx_r, 6 => start, 7=> knob_l, 8=>knob_r
+            sf::Text textsArray[10];//0~1 => info text , 2~8 => count ( 2~5 => bt(2 => btA , 3 => btB , 4 => btC , 5 => btD),  6~7 = fx(6=> fxL, 7=> fxR) , 8 => total) , 9=>nowSelectedKeyIndicator
             
 
             /*

@@ -24,6 +24,6 @@ public:
         window.setTitle(name);
     }
 
-    void RenderToWindow(sf::Sprite spritesArray[], sf::Text textsArray[], sf::RenderWindow& window, sf::Text& indicator, Containers::AppEvent& events);
+    void RenderToWindow(sf::Sprite spritesArray[], sf::Text textsArray[], sf::RenderWindow& window, Containers::AppEvent& events);
 };
 #endif // !WINDOW_MANAGER_HEADER_N

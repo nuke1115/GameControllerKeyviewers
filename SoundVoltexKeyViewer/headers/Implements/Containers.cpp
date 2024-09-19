@@ -37,14 +37,11 @@ int Containers::Sprites::DrawableObjects::ContainerInitializer()
         spritesArray[i].setTexture(_texture);
     }
 
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < 10; i++)
     {
         textsArray[i].setFont(_font);
     }
 
-    nowSelectedKeyIndicator.setFont(_font);
-
-    
 
 
 
@@ -65,8 +62,8 @@ int Containers::Sprites::DrawableObjects::ContainerInitializer()
     textsArray[0].setPosition(10, 250);
     textsArray[1].setPosition(455, 410);
 
-    nowSelectedKeyIndicator.setPosition(480,50);
-    nowSelectedKeyIndicator.setString("");
+    textsArray[9].setPosition(480,50);
+    textsArray[9].setString("");
 
 #pragma endregion
 

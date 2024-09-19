@@ -118,6 +118,6 @@ void Application::Run()
     {
         _eventDetector.DetectEvents(_appEvent, _window);
         _eventHandler.HandleEvents(_appEvent, _drawableObjects, _window);
-        _windowManager.RenderToWindow(_drawableObjects.spritesArray, _drawableObjects.textsArray, _window, _drawableObjects.nowSelectedKeyIndicator, _appEvent);
+        _windowManager.RenderToWindow(_drawableObjects.spritesArray, _drawableObjects.textsArray, _window, _appEvent);
     }
 }

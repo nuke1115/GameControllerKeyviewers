@@ -1,6 +1,6 @@
 #include "..\WindowManager.hpp"
 
-void WindowManager::RenderToWindow(sf::Sprite spritesArray[], sf::Text textsArray[], sf::RenderWindow& window, sf::Text& indicator, Containers::AppEvent& events)
+void WindowManager::RenderToWindow(sf::Sprite spritesArray[], sf::Text textsArray[], sf::RenderWindow& window, Containers::AppEvent& events)
 {
     ClearWindow(window);
 
@@ -11,7 +11,7 @@ void WindowManager::RenderToWindow(sf::Sprite spritesArray[], sf::Text textsArra
 
     if (events.SettingModeOn)
     {
-        window.draw(indicator);
+        window.draw(textsArray[9]);
     }
     else
     {

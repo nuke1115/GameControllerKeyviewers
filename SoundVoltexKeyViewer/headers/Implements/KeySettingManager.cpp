@@ -37,7 +37,7 @@ void KeySettingManager::SetKeyConfig(Containers::AppEvent& appEvent, Containers:
     if (_index > 9)
     {
         appEvent.SettingModeOn = false;
-        _drawableObjectManager.SetNowSelectedKeyIndicatorText(" ",drawableObjects.nowSelectedKeyIndicator);
+        _drawableObjectManager.SetNowSelectedKeyIndicatorText(" ",drawableObjects.textsArray[9]);
         _index = 10;
         _imageFlickManager.ResetImages(drawableObjects.spritesArray, 9);
     }
@@ -55,7 +55,7 @@ void KeySettingManager::SetKeyConfig(Containers::AppEvent& appEvent, Containers:
 
     if (_index < 10)
     {
-        _drawableObjectManager.SetNowSelectedKeyIndicatorText(Containers::Sprites::TextStrings::indicatorTextsArray[_index - 1], drawableObjects.nowSelectedKeyIndicator);
+        _drawableObjectManager.SetNowSelectedKeyIndicatorText(Containers::Sprites::TextStrings::indicatorTextsArray[_index - 1], drawableObjects.textsArray[9]);
     }
 
     switch (_index)
