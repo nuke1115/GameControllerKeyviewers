@@ -1,30 +1,5 @@
 #include "..\KeySettingManager.hpp"
 
-sf::Joystick::Axis KeySettingManager::getAxisCode(unsigned int key)
-{
-    switch (key)
-    {
-    case sf::Joystick::Axis::X:
-        return sf::Joystick::Axis::X;
-    case sf::Joystick::Axis::Y:
-        return sf::Joystick::Axis::Y;
-    case sf::Joystick::Axis::Z:
-        return sf::Joystick::Axis::Z;
-    case sf::Joystick::Axis::R:
-        return sf::Joystick::Axis::R;
-    case sf::Joystick::Axis::U:
-        return sf::Joystick::Axis::U;
-    case sf::Joystick::Axis::V:
-        return sf::Joystick::Axis::V;
-    case sf::Joystick::Axis::PovX:
-        return sf::Joystick::Axis::PovX;
-    case sf::Joystick::Axis::PovY:
-        return sf::Joystick::Axis::PovY;
-    default:
-        return sf::Joystick::X;
-    }
-}
-
 void KeySettingManager::SetKeyConfig(Containers::AppEvent& appEvent, Containers::Sprites::DrawableObjects& drawableObjects)
 {
     if (appEvent.SettingModeEntryEvent)
@@ -82,10 +57,10 @@ void KeySettingManager::SetKeyConfig(Containers::AppEvent& appEvent, Containers:
         Containers::Joystick::Codes::Buttons::start = appEvent.SettingModeButtonIndex;
         break;
     case 8:
-        Containers::Joystick::Codes::Knobs::knobL = getAxisCode(appEvent.SettingModeKnobIndex);
+        Containers::Joystick::Codes::Knobs::knobL = static_cast<sf::Joystick::Axis>(appEvent.SettingModeKnobIndex);
         break;
     case 9:
-        Containers::Joystick::Codes::Knobs::knobR = getAxisCode(appEvent.SettingModeKnobIndex);
+        Containers::Joystick::Codes::Knobs::knobR = static_cast<sf::Joystick::Axis>(appEvent.SettingModeKnobIndex);
         break;
     }
 }

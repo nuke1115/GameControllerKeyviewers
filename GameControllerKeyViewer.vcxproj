@@ -165,6 +165,7 @@
     <ClInclude Include="SoundVoltexKeyViewer\headers\Alert.h" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\AppEvent.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\Application.hpp" />
+    <ClInclude Include="SoundVoltexKeyViewer\headers\BidirectionalMap.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\CalculationUtility.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\Containers.hpp" />
     <ClInclude Include="SoundVoltexKeyViewer\headers\DrawableObjectManager.hpp" />

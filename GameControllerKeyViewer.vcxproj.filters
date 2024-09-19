@@ -136,5 +136,8 @@
     <ClInclude Include="SoundVoltexKeyViewer\includes\inicpp.hpp">
       <Filter>SoundVoltexController\헤더 파일\Externalncludes</Filter>
     </ClInclude>
+    <ClInclude Include="SoundVoltexKeyViewer\headers\BidirectionalMap.hpp">
+      <Filter>SoundVoltexController\헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

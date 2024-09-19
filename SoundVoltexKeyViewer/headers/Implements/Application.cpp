@@ -3,6 +3,14 @@
 Application::Application(int width, int height)
 {
     _windowManager.CreateWindow(width, height, _window);
+    _bidirectionalMap.SetValue("X", sf::Joystick::Axis::X);
+    _bidirectionalMap.SetValue("Y", sf::Joystick::Axis::Y);
+    _bidirectionalMap.SetValue("Z", sf::Joystick::Axis::Z);
+    _bidirectionalMap.SetValue("R", sf::Joystick::Axis::R);
+    _bidirectionalMap.SetValue("U", sf::Joystick::Axis::U);
+    _bidirectionalMap.SetValue("V", sf::Joystick::Axis::V);
+    _bidirectionalMap.SetValue("PovX", sf::Joystick::Axis::PovX);
+    _bidirectionalMap.SetValue("PovY", sf::Joystick::Axis::PovY);
 }
 
 Application::~Application()
@@ -15,72 +23,8 @@ Application::~Application()
     _ini.modify("BUTTONS", "FX_L", Containers::Joystick::Codes::Buttons::fxL);
     _ini.modify("BUTTONS", "FX_R", Containers::Joystick::Codes::Buttons::fxR);
     _ini.modify("BUTTONS", "START", Containers::Joystick::Codes::Buttons::start);
-    _ini.modify("KNOBS", "KNOB_L", GetKnobStringCodes(Containers::Joystick::Codes::Knobs::knobL));
-    _ini.modify("KNOBS", "KNOB_R", GetKnobStringCodes(Containers::Joystick::Codes::Knobs::knobR));
-}
-
-std::string Application::GetKnobStringCodes(const sf::Joystick::Axis& key)
-{
-    switch (key)
-    {
-    case sf::Joystick::Axis::X:
-        return "X";
-    case sf::Joystick::Axis::Y:
-        return "Y";
-    case sf::Joystick::Axis::Z:
-        return "Z";
-    case sf::Joystick::Axis::R:
-        return "R";
-    case sf::Joystick::Axis::U:
-        return "U";
-    case sf::Joystick::Axis::V:
-        return "V";
-    case sf::Joystick::Axis::PovX:
-        return "PovX";
-    case sf::Joystick::Axis::PovY:
-        return "PovY";
-    default:
-        return "X";
-    }
-
-}
-
-sf::Joystick::Axis Application::GetKnobValues(const std::string& key)
-{
-    if (!key.compare("X"))
-    {
-        return sf::Joystick::Axis::X;
-    }
-    else if (!key.compare("Y"))
-    {
-        return sf::Joystick::Axis::Y;
-    }
-    else if (!key.compare("Z"))
-    {
-        return sf::Joystick::Axis::Z;
-    }
-    else if (!key.compare("R"))
-    {
-        return sf::Joystick::Axis::R;
-    }
-    else if (!key.compare("U"))
-    {
-        return sf::Joystick::Axis::U;
-    }
-    else if (!key.compare("V"))
-    {
-        return sf::Joystick::Axis::V;
-    }
-    else if (!key.compare("PovX"))
-    {
-        return sf::Joystick::Axis::PovX;
-    }
-    else if (!key.compare("PovY"))
-    {
-        return sf::Joystick::Axis::PovY;
-    }
-
-    return sf::Joystick::Axis::X;//default
+    _ini.modify("KNOBS", "KNOB_L", _bidirectionalMap.GetKey(Containers::Joystick::Codes::Knobs::knobL));
+    _ini.modify("KNOBS", "KNOB_R", _bidirectionalMap.GetKey(Containers::Joystick::Codes::Knobs::knobR));
 }
 
 bool Application::CheckController()
@@ -102,8 +46,8 @@ int Application::Initialize()
     Containers::Joystick::Codes::Buttons::fxR = _ini["BUTTONS"].toInt("FX_R");
     Containers::Joystick::Codes::Buttons::start = _ini["BUTTONS"].toInt("START");
 
-    Containers::Joystick::Codes::Knobs::knobL = GetKnobValues(_ini["KNOBS"].toString("KNOB_L"));
-    Containers::Joystick::Codes::Knobs::knobR = GetKnobValues(_ini["KNOBS"].toString("KNOB_R"));
+    Containers::Joystick::Codes::Knobs::knobL = _bidirectionalMap.GetValue(_ini["KNOBS"].toString("KNOB_L"));
+    Containers::Joystick::Codes::Knobs::knobR = _bidirectionalMap.GetValue(_ini["KNOBS"].toString("KNOB_R"));
 
     Containers::Joystick::Codes::Index::JoystickIndex = _ini["CONTROLLER"].toInt("CONTROLLER_INDEX");
 

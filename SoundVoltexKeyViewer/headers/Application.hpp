@@ -10,6 +10,7 @@
 #include "..\headers\AppEvent.hpp"
 #include "..\headers\WindowManager.hpp"
 #include "..\headers\Containers.hpp"
+#include "..\headers\BidirectionalMap.hpp"
 
 
 class Application
@@ -22,8 +23,7 @@ private:
     EventHandler _eventHandler;
     Containers::AppEvent _appEvent;
     std::string _iniFilePath = "../SoundVoltexKeyviewer/assets/settings/Settings.ini";
-    sf::Joystick::Axis GetKnobValues(const std::string& key);
-    std::string GetKnobStringCodes(const sf::Joystick::Axis& key);
+    BidirectionalMap<std::string, sf::Joystick::Axis> _bidirectionalMap;
 public:
     Application(int width, int height);
     ~Application();

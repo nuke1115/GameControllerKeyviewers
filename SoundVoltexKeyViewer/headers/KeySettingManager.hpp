@@ -15,8 +15,6 @@ private:
     DrawableObjectManager _drawableObjectManager;
     ImageFlickManager _imageFlickManager;
     int _index = 1;
-    sf::Joystick::Axis getAxisCode(unsigned int key);
-
     inline void FlickImage(sf::Sprite spritesArray[], const bool& resetEvent)
     {
         if (resetEvent)
