@@ -12,24 +12,26 @@
 #include "..\headers\Containers.hpp"
 #include "..\headers\BidirectionalMap.hpp"
 
-
 class Application
 {
 private:
     sf::RenderWindow _window;
-    WindowManager _windowManager;
     Containers::Sprites::DrawableObjects _drawableObjects;
     EventDetector _eventDetector;
     EventHandler _eventHandler;
     Containers::AppEvent _appEvent;
-    std::string _iniFilePath = "../SoundVoltexKeyviewer/assets/settings/Settings.ini";
+    const std::string _iniFilePath = "../SoundVoltexKeyviewer/assets/settings/Settings.ini";
     BidirectionalMap<std::string, sf::Joystick::Axis> _bidirectionalMap;
+    WindowManager _windowManager;
 public:
     Application(int width, int height);
     ~Application();
-    bool CheckController();
-    void Run();
     int Initialize();
+    void Run();
+    inline bool CheckController()
+    {
+        return sf::Joystick::isConnected(Containers::Joystick::Codes::Index::JoystickIndex);
+    }
 };
 
 #endif // !APPLICATION_HEADER_N

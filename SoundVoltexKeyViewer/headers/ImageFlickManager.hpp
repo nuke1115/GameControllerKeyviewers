@@ -1,5 +1,5 @@
-#ifndef IMAGE_FLICK_MANAGER_N_HEADER
-#define IMAGE_FLICK_MANAGER_N_HEADER
+#ifndef IMAGE_FLICK_MANAGER_HEADER_N
+#define IMAGE_FLICK_MANAGER_HEADER_N
 #include <SFML/Graphics/Sprite.hpp>
 #include "..\headers\Containers.hpp"
 #include "..\headers\DrawableObjectManager.hpp"
@@ -16,4 +16,4 @@ public:
     void FlickImage(sf::Sprite spritesArray[],const int& index);
 };
 
-#endif // !IMAGE_FLICK_MANAGER_N_HEADER
+#endif // !IMAGE_FLICK_MANAGER_HEADER_N

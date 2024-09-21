@@ -6,6 +6,7 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Joystick.hpp>
 #include <iostream>
+#include <string>
 #include "..\headers\ErrorCode.hpp"
 
 using vector2 = sf::Vector2<int>;
@@ -42,6 +43,8 @@ namespace Containers
         private:
             sf::Texture _texture;
             sf::Font _font;
+            const std::string _ttfFilePath = "../SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf";
+            const std::string _imgFilePath = "../SoundVoltexKeyViewer/assets/imgs/Images.png";
         public:
             
             sf::Sprite spritesArray[9];//0 => btA , 1 => btB , 2 => btC , 3 => btD ,  4=> fx_l ,5=>fx_r, 6 => start, 7=> knob_l, 8=>knob_r

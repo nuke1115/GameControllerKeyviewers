@@ -22,12 +22,12 @@ initializing fuction of spritesArray and textsArray
 int Containers::Sprites::DrawableObjects::ContainerInitializer()
 {
 
-    if (!_font.loadFromFile("../SoundVoltexKeyViewer/assets/font/KCC-Hanbit.ttf"))
+    if (!_font.loadFromFile(_ttfFilePath))
     {
         return ERR_IN_LOAD_FILE;
     }
 
-    if (!_texture.loadFromFile("../SoundVoltexKeyViewer/assets/imgs/Images.png"))
+    if (!_texture.loadFromFile(_imgFilePath))
     {
         return ERR_IN_LOAD_FILE;
     }
@@ -98,11 +98,8 @@ int Containers::Sprites::DrawableObjects::ContainerInitializer()
 
 #pragma endregion
 
-
-
     return 0;
 }
-
 
 //initial value
 int Containers::Joystick::Codes::Buttons::btA = 0,

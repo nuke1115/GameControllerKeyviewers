@@ -1,5 +1,5 @@
-#ifndef BIDIRECTIONAL_MAP_N_HEADER
-#define BIDIRECTIONAL_MAP_N_HEADER
+#ifndef BIDIRECTIONAL_MAP_HEADER_N
+#define BIDIRECTIONAL_MAP_HEADER_N
 #include <unordered_map>
 
 template<typename typeKey, typename typeValue>
@@ -26,4 +26,4 @@ public:
     }
 };
 
-#endif // !BIDIRECTIONAL_MAP_N_HEADER
+#endif // !BIDIRECTIONAL_MAP_HEADER_N

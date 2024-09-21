@@ -10,10 +10,10 @@
 class EventHandler
 {
 private:
-    CalculationUtility _calculationUtility;
     Containers::Joystick::Counting _counting;
     DrawableObjectManager _drawableObjectManager;
     KeySettingManager _keySettingManager;
+    CalculationUtility _calculationUtility;
 public:
     void HandleEvents(Containers::AppEvent& events, Containers::Sprites::DrawableObjects& drawableObjects, sf::RenderWindow& window);
 };

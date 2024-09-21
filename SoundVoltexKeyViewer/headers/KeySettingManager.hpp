@@ -1,5 +1,5 @@
-#ifndef KEY_SETTING_MANAGER_N_HEADER
-#define KEY_SETTING_MANAGER_N_HEADER
+#ifndef KEY_SETTING_MANAGER_HEADER_N
+#define KEY_SETTING_MANAGER_HEADER_N
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Joystick.hpp>
@@ -15,21 +15,8 @@ private:
     DrawableObjectManager _drawableObjectManager;
     ImageFlickManager _imageFlickManager;
     int _index = 1;
-    inline void FlickImage(sf::Sprite spritesArray[], const bool& resetEvent)
-    {
-        if (resetEvent)
-        {
-            _imageFlickManager.ResetImages(spritesArray, 9);
-        }
-        
-        _imageFlickManager.FlickImage(spritesArray, _index-1);
-    }
-    
 public:
-
-
     void SetKeyConfig(Containers::AppEvent& appEvent, Containers::Sprites::DrawableObjects& drawableObjects);
 };
 
-
-#endif // !KEY_SETTING_MANAGER_N_HEADER
+#endif // !KEY_SETTING_MANAGER_HEADER_N

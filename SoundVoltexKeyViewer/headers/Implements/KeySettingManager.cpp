@@ -17,15 +17,15 @@ void KeySettingManager::SetKeyConfig(Containers::AppEvent& appEvent, Containers:
         _imageFlickManager.ResetImages(drawableObjects.spritesArray, 9);
     }
 
-    bool goNextEventTmp = false;
+
     if (appEvent.SettingModeGoNextEvent)
     {
-        goNextEventTmp = appEvent.SettingModeGoNextEvent;
+        _imageFlickManager.ResetImages(drawableObjects.spritesArray, 9);
         _index++;
         appEvent.SettingModeGoNextEvent = false;
     }
 
-    FlickImage(drawableObjects.spritesArray, goNextEventTmp);
+    _imageFlickManager.FlickImage(drawableObjects.spritesArray, _index - 1);
     
 
     if (_index < 10)

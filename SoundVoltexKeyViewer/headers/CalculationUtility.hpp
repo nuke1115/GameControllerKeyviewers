@@ -1,5 +1,5 @@
-#ifndef CALCULATION_UTILITY_HEADER
-#define CALCULATION_UTILITY_HEADER
+#ifndef CALCULATION_UTILITY_HEADER_N
+#define CALCULATION_UTILITY_HEADER_N
 #include "..\headers\Containers.hpp"
 
 class CalculationUtility
@@ -11,4 +11,4 @@ public:
     }
 };
 
-#endif // !CALCULATION_UTILITY_HEADER
+#endif // !CALCULATION_UTILITY_HEADER_N

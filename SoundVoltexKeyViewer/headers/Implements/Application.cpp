@@ -27,11 +27,6 @@ Application::~Application()
     _ini.modify("KNOBS", "KNOB_R", _bidirectionalMap.GetKey(Containers::Joystick::Codes::Knobs::knobR));
 }
 
-bool Application::CheckController()
-{
-    return sf::Joystick::isConnected(Containers::Joystick::Codes::Index::JoystickIndex);
-}
-
 int Application::Initialize()
 {
     inicpp::IniManager _ini(_iniFilePath);

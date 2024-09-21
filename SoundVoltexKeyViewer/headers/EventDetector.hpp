@@ -1,5 +1,5 @@
-#ifndef EVENT_DETECTOR__HEADER_N
-#define EVENT_DETECTOR__HEADER_N
+#ifndef EVENT_DETECTOR_HEADER_N
+#define EVENT_DETECTOR_HEADER_N
 #include <SFML/Window/Joystick.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
@@ -15,4 +15,4 @@ public:
     void DetectEvents(Containers::AppEvent& eventContainer, sf::RenderWindow& window);
 };
 
-#endif // !EVENT_DETECTOR__HEADER_N
+#endif // !EVENT_DETECTOR_HEADER_N

@@ -8,7 +8,6 @@
 class DrawableObjectManager
 {
 private:
-    Containers::Sprites::IntrectValues intrectValues;
 
     const sf::IntRect   btA[2] = { sf::IntRect(Containers::Sprites::IntrectValues::btOff, Containers::Sprites::IntrectValues::sizeBigSquare), sf::IntRect(Containers::Sprites::IntrectValues::btOn, Containers::Sprites::IntrectValues::sizeBigSquare) },
 
@@ -23,6 +22,7 @@ private:
                         fxR[2] = { sf::IntRect(Containers::Sprites::IntrectValues::fxOff, Containers::Sprites::IntrectValues::sizeRectangle), sf::IntRect(Containers::Sprites::IntrectValues::fxOn, Containers::Sprites::IntrectValues::sizeRectangle) },
 
                         start[2] = { sf::IntRect(Containers::Sprites::IntrectValues::startOff, Containers::Sprites::IntrectValues::sizeSmallSquare), sf::IntRect(Containers::Sprites::IntrectValues::startOn, Containers::Sprites::IntrectValues::sizeSmallSquare) };
+    Containers::Sprites::IntrectValues intrectValues;
 public:
     inline void UpdateButtonImage(sf::Sprite spritesArray[], bool buttonStates[], float knobStates[])
     {
