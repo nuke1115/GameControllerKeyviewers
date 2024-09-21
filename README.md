@@ -7,6 +7,8 @@ GameControllerKeyviewers
 3. 사용법
 4. 연락처
 5. 업데이트 예정중인것
+6. 패치노트
+
 
 1.GameControllerKeyviewers란?
 --
@@ -20,12 +22,14 @@ GameControllerKeyviewers는 여러 게임들의 컨트롤러의 입력을 캠이
 
 2.종류
 --
-종류는 2024/8/31일 기준 SoundVoltexControllerKeyViewer만 올라와있습니다
+종류는 2024/9/21일 기준 SoundVoltexControllerKeyViewer만 올라와있습니다
 
 3.사용법
 --
 
-먼저, 원하시는 키뷰어가 들어있는 EXECUTABLE_APPLICATIONS 폴더로 들어가서, zip파일을 압축해제해주세요.
+먼저, 원하시는 키뷰어가 있는 폴더의 z_EXECUTABLE_APPLICATION 폴더로 들어가 직접 zip파일을 다운로드받거나, Releases에서 가장 최근에 올라온 키뷰어 압축파일(ex. 키뷰어이름KeyViewer.zip)을 받아주세요
+
+그런 다음, 압축을 해제해줍니다.
 
 그런 다음, 해당 파일에 있는 README파일을 읽어주세요
 
@@ -37,5 +41,18 @@ Discord : yellowsticker_ 또는 노란딱지#7701
 
 5.업데이트 예정중인것
 --
-SoundVoltexControllerKeyViewer:
-  프로그램 내에서 키 설정이 가능하도록 하기
+
+6.업데이트 기록
+--
+자세한 패치내용은 해당하는 키뷰어 폴더의 패치노트를 참고해주세요
+
+---
+
+### 2024/8/31
+SoundVoltexKeyViewer v1.0.0 릴리즈
+
+---
+
+### 2024/9/21
+
+SoundVoltexKeyViewer v2.0.0 릴리즈
