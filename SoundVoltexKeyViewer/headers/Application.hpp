@@ -20,7 +20,7 @@ private:
     EventDetector _eventDetector;
     EventHandler _eventHandler;
     Containers::AppEvent _appEvent;
-    const std::string _iniFilePath = "../SoundVoltexKeyviewer/assets/settings/Settings.ini";
+    const std::string _iniFilePath = "../SoundVoltexKeyViewer/assets/settings/Settings.ini";
     BidirectionalMap<std::string, sf::Joystick::Axis> _bidirectionalMap;
     WindowManager _windowManager;
 public:
